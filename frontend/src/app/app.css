@@ -1,0 +1,101 @@
+.container {
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 12px;
+    width: 65%;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.status {
+    margin-top: 10px;
+    color: #444;
+    font-size: 0.9em;
+}
+
+/* New Styles for Results Box */
+.results-box {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    animation: fadeIn 0.5s;
+    margin-bottom: 20px;
+}
+
+.results-box h3 {
+    margin-top: 0;
+    color: #2e7d32;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px)}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.ai-box {
+    margin-top: 15px;
+    background-color: #f3e5f5;
+    border-left: 5px solid #9c27b0;
+    padding: 15px;
+    border-radius: 4px;
+    color: #4a148c;
+}
+
+.ai-box h4 {
+    margin: 0 0 8px 0;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7b1fa2;
+}
+
+.ai-box p {
+    margin: 0;
+    line-height: 1.5;
+    font-style: italic;
+}

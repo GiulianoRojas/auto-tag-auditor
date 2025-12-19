@@ -1,0 +1,41 @@
+<div class="container">
+  <h1>Auto Tag Auditor</h1>
+
+  <div class="card">
+    <input type="text" placeholder="Enter URL (e.g. https://google.com)" #urlInput>
+    <button (click)="auditUrl(urlInput.value)">Run Audit</button>
+  </div>
+
+  <p class="status">System Status: Online</p>
+
+  <div class="history-container">
+    @for (scan of auditHistory(); track $index) {
+      <div class="results-box fade-in">
+        <div class="header">
+          <h3>Audit Complete!</h3>
+          <span class="timestamp">{{ scan.timestamp || 'Just Now' }}</span>
+        </div>
+
+        <p><strong>Target: </strong> <a [href]="scan.url" target="_blank">{{ scan.url }}</a></p>
+        <p><strong>Status: </strong> {{ scan.status }}</p>
+        <p><strong>Tags Found:</strong></p>
+        <ul>
+          @for (tag of scan.tagsFound; track $index) {
+            <li>{{ tag }}</li>
+          }
+        </ul>
+
+        @if (scan.aiAnalysis) {
+          <div class="ai-box">
+            <h4>Gemini AI Analysis</h4>
+            <p>{{ scan.aiAnalysis }}</p>
+          </div>
+        }
+
+        @if (scan.tagsFound.length === 0) {
+          <p style="color: red">⚠️ No Google Analytics tags were detected.</p>
+        }
+      </div>
+    }
+  </div>
+</div>
